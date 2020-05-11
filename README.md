@@ -49,7 +49,7 @@ store.saveSync({ title: "My title", info: { author: "someone" } });
 await store.save({ title: "My title", info: { author: "someone" }  });
 ```
 
-### 3. Load persisted data:
+### 3. Load data:
 
 **Synchronously:**
 
@@ -63,35 +63,7 @@ const data = store.loadSync();
 const data = await store.load();
 ```
 
-### 4. Access data:
-
-```js
-const data = store.data;
-```
-
-### 5. Delete store:
-
-**Synchronously:**
-
-```js
-store.deleteSync();
-```
-
-**Asynchronously:**
-
-```js
-await store.delete();
-```
-
-### Advanced operations
-
-This set of operations are *advanced operations* as they can be performed with the *basic operations*.
-
-1. *get* data from the store
-2. *set* data to the store
-3. *modify* data of the store
-
-### 1. Get data from the store:
+### 4. Get data:
 
 **Pass a selector (array of property names) indicating what you want to get from the store.** You can pass a default value too.
 
@@ -107,7 +79,7 @@ const item = store.getSync(["info", "author"], "Optional default value"); // ret
 const item = await store.get(["info", "author"], "Optional default value");
 ```
 
-### 2. Set data to the store:
+### 5. Set data:
 
 **Pass a selector (array of property names) indicating what you want to set from the store, and the value for it.** The resultant data is returned.
 
@@ -123,7 +95,7 @@ store.setSync(["title"], "My new title");
 await store.set(["title"], "My new title");
 ```
 
-### 3. Modify data:
+### 6. Modify data:
 
 **Pass a function that receives the old data, and returns the new data.** The new data is returned.
 
@@ -143,6 +115,34 @@ await store.modify(data => {
 	data.title = "My new title";
 	return data;
 });
+```
+
+### 7. Delete store:
+
+**Synchronously:**
+
+```js
+store.deleteSync();
+```
+
+**Asynchronously:**
+
+```js
+await store.delete();
+```
+
+You can also delete specific parts of the store by providing selectors:
+
+**Synchronously:**
+
+```js
+const store = store.deleteSync("title");
+```
+
+**Asynchronously:**
+
+```js
+const store = await store.delete(["title"]);
 ```
 
 ## API

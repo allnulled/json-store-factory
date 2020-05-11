@@ -1,4 +1,4 @@
-const jsonFactory = require(__dirname + "/../index.js");
+const jsonFactory = require(__dirname + "/index.js");
 const fs = require("fs");
 const storePath = __dirname + "/store.json";
 // 0. set up:

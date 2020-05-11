@@ -4,6 +4,7 @@
   "description": "Function that returns a store that can save/load sync/async data into a specified JSON file.",
   "main": "index.js",
   "scripts": {
+    "upload": "npm run test && git add . && git commit && git push",
     "test": "node test.js"
   },
   "keywords": ["json", "save", "load", "sync", "async", "store", "factory"],
