@@ -28,12 +28,20 @@ This tool gives you an interface to `load`/`save`/`get`/`set`/`modify`/`delete` 
 6. *modify* store
 7. *delete* store
 
+
+----
+
+
 ### 1. Create a store:
 
 ```js
 const jsonStoreFactory = require("json-store-factory");
 const store = jsonStoreFactory("./store.json", { beautify: true });
 ```
+
+
+----
+
 
 ### 2. Save new data:
 
@@ -49,6 +57,10 @@ store.saveSync({ title: "My title", info: { author: "someone" } });
 await store.save({ title: "My title", info: { author: "someone" }  });
 ```
 
+
+----
+
+
 ### 3. Load data:
 
 **Synchronously:**
@@ -62,6 +74,10 @@ const data = store.loadSync();
 ```js
 const data = await store.load();
 ```
+
+
+----
+
 
 ### 4. Get data:
 
@@ -79,6 +95,10 @@ const item = store.getSync(["info", "author"], "Optional default value"); // ret
 const item = await store.get(["info", "author"], "Optional default value");
 ```
 
+----
+
+
+
 ### 5. Set data:
 
 **Pass a selector (array of property names) indicating what you want to set from the store, and the value for it.** The resultant data is returned.
@@ -94,6 +114,9 @@ store.setSync(["title"], "My new title");
 ```js
 await store.set(["title"], "My new title");
 ```
+
+----
+
 
 ### 6. Modify data:
 
@@ -116,6 +139,8 @@ await store.modify(data => {
 	return data;
 });
 ```
+
+----
 
 ### 7. Delete store:
 
