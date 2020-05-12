@@ -180,6 +180,40 @@ The module is a simple function that takes 3 arguments:
 
 The signatures of the methods of the store can be guessed by the [**Usage** section](#usage) of this document.
 
+Synchronous operations can throw errors due to filesystem operations or JSON transformations.
+
+## Internal API
+
+Due to how very useful are the internal methods of the API, they are also available through the function the module is:
+
+- `getter`: this function...
+  - ...receives:
+    - `data:Object`: data to be altered.
+    - `selector:Array|String`: selector of the data we want to get.
+    - `defaultValue:any`: the value returned when it is not found.
+- `setter`: this function...
+  - ...receives:
+    - `data:Object`: data to be altered.
+    - `selector:Array|String`: selector of the data we want to set.
+    - `value:any`: the value we want to assign to the provided selection.
+    - `force:Boolean`: whether or not we want to force the creation of intermediate objects. Defaults to `false`.
+- `deleter`: this function...
+  - ...receives:
+    - `data:Object`: data to be altered.
+    - `selector:Array|String`: selector of the data we want to delete.
+
+They all return the resulted data.
+
+*Note: This internal API is available for browser environments too.*
+
+## Tests
+
+To run tests, place the `cmd` in the `json-store-factory` project and run:
+
+`$ npm run test`
+
+As it does not hace external dependencies, it should work.
+
 ## License
 
 This project is released under [**WTFPL** or **What The Fuck Public License**](https://en.wikipedia.org/wiki/WTFPL), which means **do what you want**, basically.

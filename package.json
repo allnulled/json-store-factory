@@ -7,7 +7,23 @@
     "upload": "npm run test && git add . && git commit && git push",
     "test": "node test.js"
   },
-  "keywords": ["json", "save", "load", "sync", "async", "store", "factory"],
+  "keywords": [
+    "json",
+    "save",
+    "load",
+    "sync",
+    "async",
+    "store",
+    "factory"
+  ],
   "author": "allnulled",
-  "license": "WTFPL"
+  "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allnulled/json-store-factory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/allnulled/json-store-factory/issues"
+  },
+  "homepage": "https://github.com/allnulled/json-store-factory#readme"
 }
