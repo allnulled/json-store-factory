@@ -181,6 +181,12 @@ They all return the resulted data.
 
 *Note: This internal API is available for browser environments too.*
 
+Here you have an example of how to use it:
+
+```js
+require("json-store-factory").getter({ some: { data: "text" }}, ["some", "data"]) === "text"; // returns true
+```
+
 ## Tests
 
 To run tests, place the `cmd` in the `json-store-factory` project and run:
