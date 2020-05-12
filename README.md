@@ -14,7 +14,7 @@ To have this repeated pattern of code uploaded as an external module.
 
 ## Explanation
 
-This tool gives you an interface to `load`/`save`/`get`/`set`/`modify`/`delete` data of a `json` file, in a `sync` or `async` way.
+This tool gives you an interface to `load`/`save`/`get`/`set`/`delete` data of a `json` file, in a `sync` or `async` way.
 
 ## Usage
 
@@ -25,8 +25,7 @@ This tool gives you an interface to `load`/`save`/`get`/`set`/`modify`/`delete` 
 3. *load* store
 4. *get* store data
 5. *set* store data
-6. *modify* store
-7. *delete* store
+6. *delete* store
 
 
 ----
@@ -118,31 +117,7 @@ await store.set(["title"], "My new title");
 ----
 
 
-### 6. Modify data:
-
-**Pass a function that receives the old data, and returns the new data.** The new data is returned.
-
-**Synchronously:**
-
-```js
-await store.modifySync(data => {
-	data.title = "My new title";
-	return data;
-});
-```
-
-**Asynchronously:**
-
-```js
-await store.modify(data => {
-	data.title = "My new title";
-	return data;
-});
-```
-
-----
-
-### 7. Delete store:
+### 6. Delete store:
 
 **Synchronously:**
 
